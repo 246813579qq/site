@@ -1,0 +1,65 @@
+<html>
+<body>
+
+<table border="1px" cellspace="0" width="100%">
+	<tbody>
+		<tr>
+			<td>
+				School Id</td>
+			<td>
+				D10000001</td>
+		</tr>
+		<tr>
+			<td>
+				Name</td>
+			<td>
+				Yan chuanqi</td>
+		</tr>
+		<tr>
+			<td>
+				Gender</td>
+			<td>
+				Male</td>
+		</tr>
+		<tr>
+			<td>
+				Habit</td>
+			<td>
+				Football</td>
+		</tr>
+		<tr>
+			<td>
+				Major</td>
+			<td>
+				Math</td>
+		</tr>
+		<tr>
+			<td>
+				City</td>
+			<td>
+				Taizhou</td>
+		</tr>
+	</tbody>
+</table>
+<form>
+	<label for="School Id">School Id</label> <input id="School Id" name="School Id" placeeholder="D10000001" type="text" value="D10000001" /><br />
+	<br />
+	<label for="name">Name</label> <input id="name" name="name" placeholder="Yan chuanqi" type="text" /><br />
+	<br />
+	<label for="gender">Gender</label><br />
+	<input id="male" name="gender" type="radio" value="male" /> <label for="male">Male</label> <input id="female" name="gender" type="radio" value="female" /> <label for="female">Female</label><br />
+	<br />
+	<label for="habits">Habits</label><br />
+	<input id="swimming" name="habits" type="checkbox" value="swimming" /> <label for="swimming">Swimming</label> <input id="pingpong" name="habits" type="checkbox" value="pingpong" /> <label for="pingpong">Ping pong</label> <input id="guitar" name="habits" type="checkbox" value="guitar" /> <label for="guitar">Guitar</label><br />
+	<br />
+	<label for="major">Major</label><br />
+	<select id="major" name="major"><option value="mathematics">mathematics</option><option value="science">science</option><option value="engineering">engineering</option><option value="art">art</option></select><br />
+	<br />
+	<label for="city">City</label><br />
+	<select id="City" name="City"><option value="Hangzhou">Hangzhou</option><option value="Taizhou">Taizhou</option><option value="Ningbo">Ningbo</option></select><br />
+	<br />
+	<input type="submit" value="Submit" />&nbsp;</form>
+<p>
+	&nbsp;</p>
+</body>
+</html>
