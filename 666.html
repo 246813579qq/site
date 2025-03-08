@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>妇女节快乐</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9e3e3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 {
+            color: #d6336c;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
+        }
+        button {
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #b52b5a;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>妇女节快乐！</h1>
+        <p>亲爱的梅永馨</p>
+        <p>在这个特别的日子里，愿你永远美丽、健康、幸福！感谢你的辛勤付出和无私奉献。</p>
+        <p>祝你妇女节快乐！</p>
+        <p>我爱你</p>
+        <p>老婆</p>
+        <button onclick="showMessage()">点击查看祝福</button>
+        <p id="message" style="display:none; color: #d6336c; font-weight: bold;">你是最棒的，最好的！<br/>你是我颜川淇这辈子最爱的人!<br/></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
