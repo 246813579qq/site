@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Equation Solver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .equation-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        input {
+            width: 60px;
+            padding: 8px;
+            text-align: center;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 20px;
+            background-color: #f9f9f9;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quadratic Equation Solver</h1>
+    <p>Enter the coefficients for the equation ax² + bx + c = 0</p>
+    
+    <div class="equation-input">
+        <div class="input-group">
+            <input type="number" id="a" placeholder="a" step="any">
+            <span>x² +</span>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="b" placeholder="b" step="any">
+            <span>x +</span>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="c" placeholder="c" step="any">
+            <span>= 0</span>
+        </div>
+    </div>
+    
+    <button onclick="solveQuadratic()">Solve</button>
+    
+    <div id="result">Solution will appear here...</div>
+    
+    <script>
+        function solveQuadratic() {
+            try {
+                const a = parseFloat(document.getElementById('a').value);
+                const b = parseFloat(document.getElementById('b').value);
+                const c = parseFloat(document.getElementById('c').value);
+                
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    throw new Error("Please enter valid numbers");
+                }
+                
+                let solution;
+                
+                if (a === 0) { // Linear equation case
+                    if (b === 0) {
+                        if (c === 0) {
+                            solution = "Infinite solutions (all x satisfy the equation)";
+                        } else {
+                            solution = "No solution";
+                        }
+                    } else {
+                        const x = -c / b;
+                        solution = `x = ${x.toFixed(2)}`;
+                    }
+                } else { // Quadratic equation case
+                    const discriminant = b * b - 4 * a * c;
+                    
+                    if (discriminant > 0) { // Two real roots
+                        const x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                        const x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                        solution = `x₁ = ${x1.toFixed(2)}, x₂ = ${x2.toFixed(2)}`;
+                    } else if (discriminant === 0) { // One real root
+                        const x = -b / (2 * a);
+                        solution = `x = ${x.toFixed(2)}`;
+                    } else { // Complex roots
+                        const realPart = (-b / (2 * a)).toFixed(2);
+                        const imaginaryPart = (Math.sqrt(Math.abs(discriminant)) / (2 * a)).toFixed(2);
+                        solution = `x₁ = ${realPart} + ${imaginaryPart}i, x₂ = ${realPart} - ${imaginaryPart}i`;
+                    }
+                }
+                
+                document.getElementById('result').textContent = solution;
+            } catch (error) {
+                document.getElementById('result').textContent = error.message;
+            }
+        }
+    </script>
+</body>
+</html>
