@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment lab42 - Ellipse and Resume</title>
+    <style>
+        /* Part 1: Animated Ellipse with Radial Gradient */
+        .ellipse-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .animated-ellipse {
+            width: 300px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff0000, #00ff00, #0000ff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+        
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        /* Part 2: Resume with CSS Grid */
+        .resume {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 20px;
+        }
+        
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .main-content {
+            padding: 15px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        h1 {
+            margin: 0;
+            color: #333;
+        }
+        
+        h2 {
+            margin: 5px 0;
+            color: #666;
+            font-size: 1.1em;
+            font-weight: normal;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 600px) {
+            .resume {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Part 1: Animated Ellipse -->
+    <div class="ellipse-container">
+        <div class="animated-ellipse"></div>
+    </div>
+    
+    <!-- Part 2: Resume with CSS Grid -->
+    <div class="resume">
+        <div class="header">
+            <h1>YOUR NAME</h1>
+            <h2>Web Developer</h2>
+        </div>
+        
+        <div class="sidebar">
+            <div class="section">
+                <div class="section-title">Contact</div>
+                <p>Email: your.email@example.com</p >
+                <p>Phone: (123) 456-7890</p >
+                <p>Website: yourwebsite.com</p >
+                <p>GitHub: github.com/yourusername</p >
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Skills</div>
+                <ul>
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>CSS Grid</li>
+                    <li>Responsive Design</li>
+                    <li>Git</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Education</div>
+                <p><strong>University Name</strong><br>
+                Degree, Year</p >
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <p>Experienced web developer with expertise in front-end technologies. Skilled in creating responsive and accessible web applications using modern CSS techniques including CSS Grid and Flexbox.</p >
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Experience</div>
+                <p><strong>Web Developer</strong><br>
+                Company Name, 2020-Present</p >
+                <ul>
+                    <li>Developed responsive websites using CSS Grid</li>
+                    <li>Implemented modern CSS animations</li>
+                    <li>Collaborated with design team</li>
+                </ul>
+                
+                <p><strong>Junior Developer</strong><br>
+                Another Company, 2018-2020</p >
+                <ul>
+                    <li>Assisted in website development</li>
+                    <li>Learned modern CSS techniques</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Projects</div>
+                <p><strong>Personal Portfolio</strong><br>
+                Built using CSS Grid with animated elements</p >
+            </div>
+        </div>
+    </div>
+</body>
+</html>
